@@ -32,3 +32,11 @@ jobs:
         working-directory: backend
         run: |
           python -m pytest
+
+      - name: Build backend Docker image
+        run: |
+          docker build -t ci-cd-backend:ci ./backend
+
+      - name: Build frontend Docker image
+        run: |
+          docker build -t ci-cd-frontend:ci ./frontend
