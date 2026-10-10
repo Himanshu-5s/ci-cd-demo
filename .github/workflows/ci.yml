@@ -35,8 +35,8 @@ jobs:
 
       - name: Build backend Docker image
         run: |
-          docker build -t ci-cd-backend:ci ./backend
+          docker build -t ci-cd-backend:sha-${GITHUB_SHA} ./backend
 
       - name: Build frontend Docker image
         run: |
-          docker build -t ci-cd-frontend:ci ./frontend
+          docker build -t ci-cd-frontend:sha-${GITHUB_SHA} ./frontend
